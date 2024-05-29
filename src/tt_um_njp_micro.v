@@ -8,9 +8,6 @@ module tt_um_njp_micro(input sys_clk, nsys_rst, input [3:0] inputA, inputB, outp
 
   DataPath P2(.sys_clk(sys_clk), .sys_rst(sys_rst), .flag(flag), .inputA(inputA), .inputB(inputB), .SMP_out(SMP_out), .enA(C0), .enB(C1), .enDPO(C2), .ABsel(C3), .sr_c1(C4), .sr_c0(C5), .enSR(C6), .SRsel(C7), .alu_c0(C8), .alu_c1(C9), .alu_c2(C10), .enACC(C11), .clrACC(C12));
 
-initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars(1, SMP_out, sys_clk, nsys_rst, inputA, inputB);
-end
+
   
 endmodule
