@@ -30,7 +30,7 @@ module tt_um_njp_micro (
   wire [7:0] MP;
   assign sys_rst = !rst_n;
   assign sys_clk = clk;
-  assign ui_in[3:0] = A[3:0];
+  assign inputA[3:0] = ui_in[3:0];
   assign B[3:0] = ui_in[7:4];
   assign uo_out[7:0] = MP[7:0];
   
