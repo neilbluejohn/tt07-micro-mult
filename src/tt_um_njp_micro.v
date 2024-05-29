@@ -24,7 +24,7 @@ module tt_um_njp_micro (
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
   
-  wire sys_rst, flag, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12;
+  wire sys_clk, sys_rst, flag, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12;
   wire [3:0] A;
   wire [3:0] B;
   wire [7:0] MP;
