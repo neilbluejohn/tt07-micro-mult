@@ -21,8 +21,8 @@ async def micro_random_test(dut):
         AB = random.randint(0, 255)
         dut.ui_in.value = AB
 
-        A = AB & 15
-        B = AB & 240
+        A = AB % 16
+        B = AB >> 4
         #dut.ui_in[7:4].value = B
 
         await Timer(200, units="ns")
