@@ -9,10 +9,15 @@ from cocotb.triggers import Timer
    
 @cocotb.test()
 async def micro_random_test(dut):
-    #dut._log.info("Start")
+    dut._log.info("Start")
+   
     # generate a clock
-    
+   
     cocotb.start_soon(Clock(dut.clk, 10, units="ns").start())
+   
+    # Keep testing the module by changing the input values, waiting for
+    # sufficient clock cycles for the program to run, and asserting the
+    # expected output values.
    
     for i in range(1000):
 
@@ -31,10 +36,7 @@ async def micro_random_test(dut):
         await Timer(1200, units="ns")
 
         assert dut.uo_out.value == A*B, "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.uo_out.value)
-
-
-
-    # Set the clock period to 10 us (100 KHz)
+       
 
     # Reset
     #dut._log.info("Reset")
@@ -44,8 +46,3 @@ async def micro_random_test(dut):
     dut.rst_n.value = 0
     
     dut._log.info("Test project behavior")
-
-    
-    
-    # Keep testing the module by changing the input values, waiting for
-    # one or more clock cycles, and asserting the expected output values.
