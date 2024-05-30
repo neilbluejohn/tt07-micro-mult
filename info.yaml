@@ -42,14 +42,14 @@ pinout:
   ui[7]: "inputB[3]"
 
   # Outputs
-  uo[0]: "MP[0]"
-  uo[1]: "MP[1]"
-  uo[2]: "MP[2]"
-  uo[3]: "MP[3]"
-  uo[4]: "MP[4]"
-  uo[5]: "MP[5]"
-  uo[6]: "MP[6]"
-  uo[7]: "MP[7]"
+  uo[0]: "SMP_out[0]"
+  uo[1]: "SMP_out[1]"
+  uo[2]: "SMP_out[2]"
+  uo[3]: "SMP_out[3]"
+  uo[4]: "SMP_out[4]"
+  uo[5]: "SMP_out[5]"
+  uo[6]: "SMP_out[6]"
+  uo[7]: "SMP_out[7]"
 
   # Bidirectional pins
   uio[0]: ""
