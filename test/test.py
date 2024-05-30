@@ -18,11 +18,11 @@ async def micro_random_test(dut):
 
         dut.rst_n.value = 0
 
-        A = random.randint(0, 15)
-        B = random.randint(0, 15)
+        A = random.randint(0, 255)
+   
 
-        dut.ui_in[3:0].value = A
-        dut.ui_in[7:4].value = B
+        dut.ui_in[7:0].value = A
+        #dut.ui_in[7:4].value = B
 
         await Timer(200, units="ns")
 
@@ -30,7 +30,7 @@ async def micro_random_test(dut):
 
         await Timer(1200, units="ns")
 
-        assert dut.SMP_out.value == A * B, "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.SMP_out.value)
+        assert dut.SMP_out.value == A[7:4] * B[7:4], "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.SMP_out.value)
 
 
 
