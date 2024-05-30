@@ -36,4 +36,4 @@ module MicroCodeROM(input [4:0] addr, output reg [3:0]data);
 	5'b11110 : data = 4'b1111;
 	5'b11111 : data = 4'b1111;
     endcase
-endmodule  
+endmodule
