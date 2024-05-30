@@ -1,9 +1,38 @@
 # SPDX-FileCopyrightText: © 2024 Tiny Tapeout
 # SPDX-License-Identifier: MIT
 
+# My imported code
 import cocotb
+import random
 from cocotb.clock import Clock
-from cocotb.triggers import ClockCycles
+from cocotb.triggers import Timer
+   
+@cocotb.test()
+async def micro_random_test(dut):
+
+    # generate a clock
+    
+    cocotb.start_soon(Clock(dut.sys_clk, 10, units="ns").start())
+   
+    for i in range(1000):
+
+        dut.nsys_rst.value = 0
+
+        A = random.randint(0, 15)
+        B = random.randint(0, 15)
+
+        dut.ui[3:0].value = A
+        dut.ui[7:4].value = B
+
+        await Timer(200, units="ns")
+
+        dut.nsys_rst.value = 1
+
+        await Timer(1200, units="ns")
+
+        assert dut.SMP_out.value == A * B, "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.SMP_out.value)
+
+
 
 
 @cocotb.test()
