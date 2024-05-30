@@ -41,12 +41,6 @@ async def micro_random_test(dut):
        
         assert dut.uo_out.value == A*B, "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.uo_out.value)
        
-
-    # Reset
-    #dut._log.info("Reset")
     dut.ena.value = 1
     dut.ui_in.value = 0
     dut.uio_in.value = 0
-    #dut.rst_n.value = 0
-    
-    
