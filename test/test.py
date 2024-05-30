@@ -12,7 +12,7 @@ async def micro_random_test(dut):
     #dut._log.info("Start")
     # generate a clock
     
-    cocotb.start_soon(Clock(dut.sys_clk, 10, units="ns").start())
+    cocotb.start_soon(Clock(dut.clk, 10, units="ns").start())
    
     for i in range(1000):
 
