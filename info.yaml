@@ -18,6 +18,7 @@ project:
     - "tt_um_njp_micro.v"
     - "ControlUnit.v"
     - "DataPath.v"
+    - "Decoder.v"
     - "ALU.v"
     - "MicroCodeROM.v"
     - "Mux2to1V1.v"
