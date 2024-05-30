@@ -20,7 +20,9 @@ async def micro_random_test(dut):
     # expected output values.
    
     for i in range(1000):
-
+       
+        # Reset
+        dut._log.info("Reset")
         dut.rst_n.value = 0
 
         AB = random.randint(0, 255)
