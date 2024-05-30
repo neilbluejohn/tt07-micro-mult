@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES += $(PWD)/tb.v $(PWD)/tt_um_njp_micro.v $(PWD)/ALU.v $(PWD)/ControlUnit.v $(PWD)/DataPath.v $(PWD)/Decoder.v $(PWD)/MicroCodeROM.v $(PWD)/Mux2to1V1.v $(PWD)/Mux2to1V2.v $(PWD)/ProgramCounter.v $(PWD)/RegEight.v $(PWD)/RegFour.v $(PWD)/TimingGenerator.v $(PWD)/UniversalShiftReg.v
 
 ifneq ($(GATES),yes)
 
