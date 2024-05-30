@@ -21,7 +21,7 @@ async def micro_random_test(dut):
         A = random.randint(0, 255)
    
 
-        dut.ui_in[7:0].value = A
+        dut.ui_in.value = A
         #dut.ui_in[7:4].value = B
 
         await Timer(200, units="ns")
