@@ -22,14 +22,14 @@ module tt_um_njp_micro (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  //wire _unused = &{ena, clk, rst_n, 1'b0};
   
   wire sys_clk, sys_rst, flag, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12;
   wire [3:0] inputA = ui_in[3:0];
   wire [3:0] inputB = ui_in[7:4];
   assign sys_rst = !rst_n;
   assign sys_clk = clk;
-  assign uo_out[7:0] = MP[7:0];
+  wire uo_out[7:0] = SMPout[7:0];
   
   ControlUnit P1(.sys_clk(sys_clk), .sys_rst(sys_rst), .flag(flag), .C0(C0), .C1(C1), .C2(C2), .C3(C3), .C4(C4), .C5(C5), .C6(C6), .C7(C7), .C8(C8), .C9(C9), .C10(C10), .C11(C11), .C12(C12));
 
