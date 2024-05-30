@@ -2,7 +2,7 @@
 // Produce the control signals C0 to C12 from a control truth table
 // For execution commands (register enables) AND with T2
 
-module Decoder(input [3:0] opcode, input flag, T2, output C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12);
+module Dec(input [3:0] opcode, input flag, T2, output C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12);
   
   reg [15:0] Z;
   
