@@ -27,6 +27,7 @@ module tt_um_njp_micro (
   wire sys_clk, sys_rst, flag, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12;
   wire [3:0] inputA = ui_in[3:0];
   wire [3:0] inputB = ui_in[7:4];
+  wire [7:0]  SMP_out;
   assign sys_rst = !rst_n;
   assign sys_clk = clk;
   assign uo_out[7:0] = SMP_out[7:0];
