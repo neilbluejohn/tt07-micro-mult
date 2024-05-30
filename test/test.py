@@ -30,7 +30,7 @@ async def micro_random_test(dut):
 
         await Timer(1200, units="ns")
 
-        assert dut.uo_out.value == A[7:4] * B[7:4], "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.uo_out.value)
+        assert dut.uo_out.value == A[7:4] * A[3:0], "Randomised test failed with: {A} * {B} = {X}".format(A=dut.inputA.value, B=dut.inputB.value, X=dut.uo_out.value)
 
 
 
